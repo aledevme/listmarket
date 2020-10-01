@@ -1,13 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatelessWidget {
-  
+ 
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
+      return AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarBrightness: Brightness.dark,
+          statusBarIconBrightness: Brightness.dark
+        ),
+      child:Scaffold(
       backgroundColor:Color(0xffff1654),
       body: SafeArea(
           child: Container(
@@ -73,7 +79,9 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+      ),
       )
+      
     );
   }
 
